@@ -1,0 +1,7 @@
+# maven ignore
+target/
+.idea
+*.iml
+*.log
+*.settings/
+*.prefs
