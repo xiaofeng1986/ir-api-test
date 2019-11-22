@@ -29,7 +29,7 @@ public class ImageRecognizeSteps {
         req.setLgt("121.757661");
         req.setSalesId("19070005");
         req.setSalesName("肖峰");
-        req.setImgUrl("https://s3.cn-north-1.amazonaws.com.cn/s3-038-itsh-irs-dev-bjs/pic/ir-ai-service/sfa/5d581343-3178-4e9e-a30b-fb5c2142f6df.jpeg");
+        req.setImgUrl("https://s3.cn-north-1.amazonaws.com.cn/s3-035-shit-irservice-in-prd-bjs/pic/ir-ai-service/f92bf4d2-0ce8-11ea-81ba-0242ac130003.jpg?X-Amz-Security-Token=FwoDYXdzEAgaDKCFHmI2o6gy8ru8ayLuAt3AbCbo1GKJQbuBu5VPNGEv%2FyLhyU%2Box0innfU3HGZBnL%2Bqu%2BigpO%2B02QOgr5xJJVJewXmBOKzDQCQ32Wvst1Wl9EtVySvwgrUOIKAlKbAJzxMqDN2OQLtrsgEU54iK579VetNe61UXIoQAPutLkm1wQy20sJUc0RwfU4Ca1anwvOAt50BbNk73kW73zHomCHdksclKxziHm9gUNpjNiCnToIcwPaPWsl3EG7hhNltYkugvKiMW%2Bskv6ZCUsCgqCSpYH8PFsJ0loPxzXcFIDYAt%2BDunr90QQ68ZIN43Z4rdYZ4g8E70DoFPwXPqG2TSsKJKan0hPCuUeVR5W78fS%2Fn2tt03XNvy3Ca3CUCJAsafeyI%2BMR%2BZSrVZ89wli7S1%2BjL2yXGuJrAlrY1Yq2874OtIq06SuzhWzU6Jry6Fb75EcGHl9m%2FcUgMJnp5xMzcUmuy2K4rp3UpGNnLL1PFbujWtgSqARVGja%2F97%2BXLt7iiAk97uBTKmARvfBPnJZxbHHeC8mXSX86DKa7tJVlEgu60t3NKNqHjg31%2B3Arx%2Fyqzwp488lO8vGrKIEdOnriLaPxVJ2FKAX0nsc%2FLko7w42YCMieHWa0UPA0RXn3ZtE5fTt8S2UuG0WksN8rlsIAALCx1UlxT0I%2B2H8oofDlcsIzyxvi%2FWnieZ7Ykzs19AT9oi%2BeH5%2BWAVuQUCLP58MLlYgT5CRYl%2B97%2Bx0BrC1wY%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20191122T072042Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAXLCZFYXS4R3EJO4S%2F20191122%2Fcn-north-1%2Fs3%2Faws4_request&X-Amz-Signature=76cb215a22ccf393ee8ea4139520d5155437befd549545effbf2cb8b9271df69");
         req.setStoreType("CTP-GT");
         req.setSceneCategoryOne("B");
         req.setSceneCategoryTwo("B1");
