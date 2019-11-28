@@ -19,7 +19,7 @@ public class ImageRecognizeSteps {
     @Given("已准备的接口请求内容包含所有字段")
     public void prepareRequestContent() throws IOException {
 //        String imgPath = "D:\\001_Xiaofeng\\imgUrl.jpg";(local)
-        String imgPath = "\\data\\imgUrl.jpg";
+        String imgPath = "/data/imgUrl.jpg";
         String imgUrl = reqUtil.generateImgUrlByUploadImg(imgPath);
 
         req.setBusinessId(String.valueOf(new Random().nextInt(10000)));
