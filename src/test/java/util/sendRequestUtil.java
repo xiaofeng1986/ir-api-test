@@ -22,6 +22,8 @@ import static org.junit.Assert.assertTrue;
  */
 public class sendRequestUtil {
 
+    public static final String HTTPS_APIMARKET_TEST_SHINHO_NET_CN_IR_AI_SERVICE_IMAGE_ANALYSIS = "https://apimarket-test.shinho.net.cn/ir-ai/image/analysis";
+
     public sendRequestUtil() {}
 
     /**
@@ -63,7 +65,7 @@ public class sendRequestUtil {
     }
 
     public HttpURLConnection generateImageAnalysisConnection() throws IOException {
-        URL url = new URL("https://apimarket-test.shinho.net.cn/ir-ai-service/image/analysis");
+        URL url = new URL(HTTPS_APIMARKET_TEST_SHINHO_NET_CN_IR_AI_SERVICE_IMAGE_ANALYSIS);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setRequestMethod("POST");
         con.setRequestProperty("Content-Type", "application/json; utf-8");

@@ -51,9 +51,9 @@ public class jiraCreateSubtaskCSV {
 
         con.setDoOutput(true);
 
-        String project = "DAT4"; //IR,DAT4
-        String fixVersion = "Sprint22";
-        String components = "开发";
+        String project = "IR"; //IR,DAT4
+        String fixVersion = "Sprint08";
+//        String components = "开发";
         String parentKey = issue[0];
         String subTaskSummary = issue[2];
         String userId = issue[3];
@@ -62,49 +62,50 @@ public class jiraCreateSubtaskCSV {
 //        String startDate = issue[6];
 //        String endDate = issue[7];
 
-//        switch (userId) {
-//            case "刘":
-//                userId = "18040068";
-//                break;
-//            case "志":
-//                userId = "19060002";
-//                break;
-//            case "建":
-//                userId = "15110003";
-//                break;
-//            case "牛":
-//                userId = "18040165";
-//                break;
-//            case "任":
-//                userId = "18020001";
-//                break;
-//            case "张明阳":
-//                userId = "18040108";
-//            case "严永洁":
-//                userId = "18120001";
-//                break;
-//            case "李智":
-//                userId = "18050027";
-//                break;
-//            case "孙孟杰":
-//                userId = "17060036";
-//                break;
-//            case "李务增":
-//                userId = "17080006";
-//                break;
-//            case "王秋丽":
-//                userId = "18120108";
-//                break;
-//            case "左琦":
-//                userId = "18010019";
-//                break;
-//            default:
-//                userId = "19070005";
-//        }
+        switch (userId) {
+            case "刘":
+                userId = "18040068";
+                break;
+            case "志刚":
+                userId = "19060002";
+                break;
+            case "建军":
+                userId = "15110003";
+                break;
+            case "牛彪":
+                userId = "18040165";
+                break;
+            case "任春宝":
+                userId = "18020001";
+                break;
+            case "张明阳":
+                userId = "18040108";
+                break;
+            case "严永洁":
+                userId = "18120001";
+                break;
+            case "李智":
+                userId = "18050027";
+                break;
+            case "孙孟杰":
+                userId = "17060036";
+                break;
+            case "李务增":
+                userId = "17080006";
+                break;
+            case "王秋丽":
+                userId = "18120108";
+                break;
+            case "左琦":
+                userId = "18010019";
+                break;
+            default:
+                userId = "19070005";
+        }
 
         final String requestBody = "{\"fields\": {\"project\":{\"key\": \"" + project + "\"},\n" +
                 "\"fixVersions\": [{\"name\": \"" + fixVersion + "\"}],\n" +
-                "\"components\": [{\"name\": \"" + components + "\"}],\n" +
+//                "\"components\": [{\"name\": \"" + components + "\"}],\n" +
                 "\"parent\":{\"key\": \"" + parentKey + "\"},\n" +
                 "\"labels\": [\"" + label + "\"],\n" +
                 "\"assignee\":{\"name\": \"" + userId + "\"},\n" +
