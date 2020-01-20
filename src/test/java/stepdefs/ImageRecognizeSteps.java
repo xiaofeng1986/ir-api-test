@@ -20,7 +20,7 @@ public class ImageRecognizeSteps {
     public void prepareRequestContent() throws IOException {
 
         String imgPath = "/data/imgUrl.jpg";
-//      imgPath = "D:\\001_Xiaofeng\\imgUrl.jpg"; //local_debug
+//        imgPath = "D:\\001_Xiaofeng\\imgUrl.jpg"; //local_debug
         String imgUrl = reqUtil.generateImgUrlByUploadImg(imgPath);
 
 

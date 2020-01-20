@@ -23,6 +23,7 @@ import static org.junit.Assert.assertTrue;
 public class sendRequestUtil {
 
     public static final String HTTPS_APIMARKET_TEST_SHINHO_NET_CN_IR_AI_SERVICE_IMAGE_ANALYSIS = "https://apimarket-test.shinho.net.cn/ir-ai/image/analysis";
+    public static final String HTTPS_APIMARKET_TEST_SHINHO_NET_CN_IR_REC_SERVICE_FILE_UPLOAD = "https://apimarket-test.shinho.net.cn/ir-recognition/file/upload";
 
     public sendRequestUtil() {}
 
@@ -74,7 +75,7 @@ public class sendRequestUtil {
     }
 
     public String generateImgUrlByUploadImg(String imgPath) throws IOException {
-        String sURL="https://apimarket-test.shinho.net.cn/ir-rec-service/file/upload";
+        String sURL= HTTPS_APIMARKET_TEST_SHINHO_NET_CN_IR_REC_SERVICE_FILE_UPLOAD;
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost uploadFile = new HttpPost(sURL);
