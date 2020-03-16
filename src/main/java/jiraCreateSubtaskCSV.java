@@ -58,7 +58,8 @@ public class jiraCreateSubtaskCSV {
         String subTaskSummary = issue[2];
         String userId = issue[3];
         String storyPoint = issue[4];
-        String label = issue[5];
+        String descriptioin = issue[5];
+        String label = issue[6];
 //        String startDate = issue[6];
 //        String endDate = issue[7];
 
@@ -109,7 +110,7 @@ public class jiraCreateSubtaskCSV {
                 "\"parent\":{\"key\": \"" + parentKey + "\"},\n" +
                 "\"labels\": [\"" + label + "\"],\n" +
                 "\"assignee\":{\"name\": \"" + userId + "\"},\n" +
-                "\"summary\": \"" + subTaskSummary + "\",\"description\": \"\",\"issuetype\":{\"id\": \"10302\",\"name\": \"子任务\"},\n" +
+                "\"summary\": \"" + subTaskSummary + "\",\"description\": \"" +descriptioin + "\",\"issuetype\":{\"id\": \"10302\",\"name\": \"子任务\"},\n" +
                 "\"customfield_10006\": " + storyPoint + "\n" +
 //                ",\"customfield_10607\": \"" + startDate + "\"\n" +
 //                ",\"customfield_10609\": \"" + endDate + "\"\n" +
