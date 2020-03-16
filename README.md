@@ -6,6 +6,8 @@
 
 
 如何使用csv批量建jira sub task<br>
+主要逻辑都在jiraCreateSubtaskCSV.java.
+
 1. 准备subtask.csv<br>
 storyKey,storySummary,sub-taskSummary,userId,storyPoint,description,label<br>
 IR-980,故事概要,子任务概要,人名或ID,3,子任务描述,测试<br>
