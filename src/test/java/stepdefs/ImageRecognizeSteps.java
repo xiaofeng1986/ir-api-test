@@ -36,7 +36,7 @@ public class ImageRecognizeSteps {
         req.setSalesId("19070005");
         req.setSalesName("肖峰");
         req.setImgUrl(imgUrl);
-        req.setStoreType("CTP-GT");
+        req.setStoreType("WS-R");
         req.setSceneCategoryOne("B");
         req.setSceneCategoryTwo("B1");
         req.setDataSource("1");
