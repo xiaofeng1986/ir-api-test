@@ -52,7 +52,7 @@ public class jiraCreateSubtaskCSV {
         con.setDoOutput(true);
 
         String project = "IR"; //IR,DAT4
-        String fixVersion = "Sprint08";
+        String fixVersion = "Sprint11";
 //        String components = "开发";
         String parentKey = issue[0];
         String subTaskSummary = issue[2];
@@ -70,7 +70,7 @@ public class jiraCreateSubtaskCSV {
             case "志刚":
                 userId = "19060002";
                 break;
-            case "建军":
+            case "殷建军":
                 userId = "15110003";
                 break;
             case "牛彪":

@@ -24,7 +24,7 @@ public class ImageRecognizeSteps {
         String imgUrl = reqUtil.generateImgUrlByUploadImg(imgPath);
 
 
-        req.setBusinessId(String.valueOf(new Random().nextInt(10000)));
+        req.setBusinessId(String.valueOf(new Random().nextInt(1000000)));
         req.setStoreName("上海农工商0293店-中兴店");
         req.setStoreNo("2000287815");
         req.setProvince("上海市");
