@@ -4,6 +4,9 @@
 1. csv批量建jira sub task。<br>
 2. cucubmber跑API case<br>
 
+前置条件：
+1.安装JDK1.8
+2.按照IDE（可以使用IDEA）,使用IDE运行jiraCreateSubtaskCSV.java
 
 如何使用csv批量建jira sub task<br>
 主要逻辑都在jiraCreateSubtaskCSV.java.
