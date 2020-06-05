@@ -9,9 +9,12 @@ public class jiraCreateSubtaskCSV {
     public static final String CSV_FILE_PATH = "D:\\001_Xiaofeng\\JiraRequest\\subtask.csv";
     public static final String JIRA_USER = "19070005";
     public static final String JIRA_PWD = "Utada.2019";
-    public static final String PROJECT = "DAT4";  //IR-图像中台,DAT4-C4I
-    public static final String FIX_VERSION = "Sprint26";
+    public static final String PROJECT = "DAT4";  //IR-图像中台,DAT4-C4I,,SYJ-食与家
+    public static final String FIX_VERSION = "Sprint27";
     public static String totalCardJSON = "[";
+
+
+    //中文字符逗号处理，
 
     public static void main(String[] args) {
         String csvFile = CSV_FILE_PATH;
@@ -95,13 +98,16 @@ public class jiraCreateSubtaskCSV {
 
 
         switch (userId) {
-            case "刘":
+            case "刘振宇":
                 userId = "18040068";
                 break;
             case "沈志刚":
                 userId = "19060002";
                 break;
             case "殷建军":
+                userId = "15110003";
+                break;
+            case "建军":
                 userId = "15110003";
                 break;
             case "牛彪":
@@ -149,6 +155,9 @@ public class jiraCreateSubtaskCSV {
             case "傅为地":
                 userId = "18040112";
                 break;
+            case "付为地":
+                userId = "18040112";
+                break;
             case "鲁万财":
                 userId = "19040047";
                 break;
@@ -158,8 +167,59 @@ public class jiraCreateSubtaskCSV {
             case "郭虎":
                 userId = "17080007";
                 break;
+            case "郝旭龙":
+                userId = "18120003";
+                break;
+            case "魏源":
+                userId = "17120031";
+                break;
+            case "陈侃麟":
+                userId = "17120059";
+                break;
+            case "郑慧民":
+                userId = "18120049";
+                break;
+            case "李磊":
+                userId = "18120002";
+                break;
             case "万军":
                 userId = "17060085";
+                break;
+            case "蔡文彬":
+                userId = "17110099";
+                break;
+            case "王修生":
+                userId = "17050033";
+                break;
+            case "辛文丽":
+                userId = "16010019";
+                break;
+            case "吴宗恩":
+                userId = "18110018";
+                break;
+            case "尚康":
+                userId = "19110089";
+                break;
+            case "杨丽辉":
+                userId = "18040067";
+                break;
+            case "张婧雯":
+                userId = "18040186";
+                break;
+            case "范军辉":
+                userId = "17080005";
+                break;
+            case "周俊":
+                userId = "20040071";
+                break;
+            case "朱炜敬":
+                userId = "17090104";
+                break;
+            case "黄二明":
+                userId = "18120004";
+                break;
+            case "徐晓赟":
+                userId = "17080107";
                 break;
             default:
                 userId = "19070005";
@@ -205,22 +265,24 @@ public class jiraCreateSubtaskCSV {
             }
         }
 
-        int subTaskKeyStart = response.toString().indexOf("key")+6;
-        int subTaskKeyEnd = response.toString().indexOf("self")-3;
-        String subTaskKey= response.toString().substring(subTaskKeyStart,subTaskKeyEnd);
-
-        String jsonConnection = "\", \"";
-        String cardJsonLine = "[\"" + parentKey + jsonConnection + subTaskKey + jsonConnection
-                + storyPoint + jsonConnection +  subTaskSummary + jsonConnection
-                + startDateJson + jsonConnection + endDateJson + jsonConnection + userIdJson + "\"],";
-
-        totalCardJSON += cardJsonLine;
-
         if (con.getResponseCode() == 201) {
+            int subTaskKeyStart = response.toString().indexOf("key")+6;
+            int subTaskKeyEnd = response.toString().indexOf("self")-3;
+            String subTaskKey= response.toString().substring(subTaskKeyStart,subTaskKeyEnd);
+
+            String jsonConnection = "\", \"";
+            String cardJsonLine = "[\"" + parentKey + jsonConnection + subTaskKey + jsonConnection
+                    + storyPoint + jsonConnection +  subTaskSummary + jsonConnection
+                    + startDateJson + jsonConnection + endDateJson + jsonConnection + userIdJson + "\"],";
+
+            totalCardJSON += cardJsonLine;
+
             System.out.println(
-                    "Response Code : " + con.getResponseCode() + "\n" +
-                            "Response Body: " + response.toString() + "\n" +
-                            "SubTaskKey:  " + subTaskKey + "\n"
+//                    "Response Code : " + con.getResponseCode() + "\n" +
+//                            "Response Body: " + response.toString() + "\n" +
+//                            "SubTaskKey:  " + subTaskKey + "\n" +
+//                            "cardJsonLine: " +
+                                    cardJsonLine
             );
         } else {
             System.out.println(
