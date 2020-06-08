@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>构建故事/任务卡</title>
+  </head>
+  <body>
+    <div id="factory">
+      <form name="myForm">
+        <div class="form-item">
+          <label for="type">卡片类型</label>
+
+          <input id="storyType"" type="radio" name="type" value="story" checked />
+          <label for="storyType">故事</label>
+
+          <input id="taskType"" type="radio" name="type" value="task" />
+          <label for="taskType">任务</label>
+        </div>
+        <div class="form-item">
+          <label for="data">卡片数据</label>
+
+          <input type="file" name="data" id="data" />
+        </div>
+        <button type="button" name="build">开始</button>
+      </form>
+    </div>
+    <div id="container"></div>
+  </body>
+  <script>
+    (function() {
+      const myForm = document.myForm
+      const container = document.querySelector('#container')
+
+      const fe = '王龙刚，张康鑫，徐海峰，范军辉，张警国，苗壮';
+      const be = '魏涛，郭虎，沈志刚，郝旭龙，李磊，鲁万财，付为地';
+      const test = '魏源，陈侃麟，郑慧民';
+
+      myForm.build.onclick = function () {
+        const type = myForm.type.value;
+
+        readFile(data => {
+          document.getElementById('factory').style.display = 'none'
+
+          container.className = `${type}__container`;
+          container.innerHTML = type === 'task'
+            ? buildTask(data)
+            : buildStory(data);
+        })
+      }
+
+      function readFile (callback) {
+        const file = document.getElementById('data').files[0];
+        if (!file) {
+          alert('请选择文件')
+        }
+        const oFReader = new FileReader()
+        oFReader.onload = evt => {
+          try {
+            const data = JSON.parse(evt.target.result)
+            callback(data)
+          } catch(err) {
+            alert('请确认JSON文件格式正确')
+          }
+        };
+        oFReader.readAsText(file, 'utf-8');
+      }
+
+      function buildStory(stories) {
+        // const pageContent = [];
+        // const result = [];
+        // stories.forEach((story, index) => {
+          // story = story[0].split(',');
+          // const no = story[0];
+          // const title = story[3];
+          // const dateRang = `${story[4]}~${story[5]}`;
+
+          // const storyCard = `
+          //   <div class="story">
+          //     <h1 class="story__no">${no}</h1>
+          //     <span class="story__title">${title}</span>
+          //     <div class="story__footer">
+          //       <span class="footer__date">${dateRang}（${story[2]}）</span>
+          //       <span class="footer__name">${story[6]}</span>
+          //     </div>
+          //   </div>
+          
+          // pageContent.push(storyCard)
+
+          // if (
+          //   ((index + 1) % 4 === 0 && index) ||
+          //   index === stories.length - 1
+          // ) {
+          //   result.push(`
+          //     <div class="story-group">${pageContent.join('')}</div>
+          //   `)
+          //   pageContent.length = 0
+          // }
+        // })
+        // return result.join('');
+
+        
+        const pageContent = [];
+        const result = [];
+
+        stories.forEach((cardItem, index) => {
+          /** 可更换前端端标识 */
+          const title = cardItem[3];
+          const name = cardItem[6];
+          let end
+
+          const storyCard = `
+            <div class="story ${end}">
+              <h1 class="story__no">${cardItem[0]}</h1>
+              <span class="story__title">「 ${cardItem[1]} 」 ${cardItem[3]}</span>
+              <div class="story__footer">
+                <span class="footer__date">${cardItem[4]}～${cardItem[5]}（${cardItem[2]}）</span>
+                <span class="footer__name">${cardItem[6]}</span>
+              </div>
+            </div>
+          `
+          pageContent.push(storyCard)
+
+          if (
+            ((index + 1) % 6 === 0 && index) ||
+            index === stories.length - 1
+          ) {
+            result.push(`
+              <div class="story-group">${pageContent.join('')}</div>
+            `)
+            pageContent.length = 0
+          }
+        })
+        return result.join('')
+      }
+
+      function buildTask (tasks) {
+        const pageContent = [];
+        const result = [];
+
+        tasks.forEach((cardItem, index) => {
+          /** 可更换前端端标识 */
+          const title = cardItem[3];
+          const name = cardItem[6];
+          let end
+
+          const isFE = title.includes('前端');
+          const isBE = title.includes('后端');
+
+          if (!isFE && !isBE) {
+            switch (true) {
+              case fe.includes(name):
+                end = 'fe'
+                break;
+              case be.includes(name):
+                end = 'be'
+                break;
+              case test.includes(name):
+                end = 'test'
+                break;
+            }
+          } else {
+            end = isFE ? 'fe' : 'be'
+          }
+
+          const taskCard = `
+            <div class="task ${end}">
+              <h1 class="task__no">${cardItem[0]}</h1>
+              <span class="task__title">「 ${cardItem[1]} 」 ${cardItem[3]}</span>
+              <div class="task__footer">
+                <span class="footer__date">${cardItem[4]}～${cardItem[5]}（${cardItem[2]}）</span>
+                <span class="footer__name">${cardItem[6]}</span>
+              </div>
+            </div>
+          `
+          pageContent.push(taskCard)
+
+          if (
+            ((index + 1) % 6 === 0 && index) ||
+            index === tasks.length - 1
+          ) {
+            result.push(`
+              <div class="task-group">${pageContent.join('')}</div>
+            `)
+            pageContent.length = 0
+          }
+        })
+        return result.join('')
+      }
+    })()
+  </script>
+  <style>
+  html, body{
+    padding: 0;
+    margin: 0;
+  }
+  body {
+    background: white;
+    font-size: 0;
+  }
+  #factory {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-item {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  .form-item label {
+    width: 80px;
+    color: black;
+    font-size: 14px;
+  }
+  .task-group {
+    width: 240mm;
+    display: grid;
+    grid-template-columns: repeat(3, 80mm);
+    page-break-after: always;
+  }
+  .story-group {
+    width: 260mm;
+    display: grid;
+    grid-template-columns: repeat(2, 130mm);
+    page-break-after: always;
+  }
+  .story {
+    font-size: 5.5mm;
+    text-align: left;
+    width: 130mm;
+    height: 80mm;
+    padding: 6mm 5mm 5mm;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+    background-color: rgba(233, 218, 10, 0.3);
+  }
+  .task {
+    font-size: 5.5mm;
+    text-align: left;
+    width: 80mm;
+    height: 80mm;
+    /* margin-top: 2.5mm; */
+    /* border: 5mm solid white; */
+    padding: 6mm 5mm 5mm;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border-top: 1px solid #FFF;
+    border-left: 1px solid #FFF;
+  }
+  .task.fe {
+    background-color: rgba(103, 226, 11, 0.3);
+  }
+  .task.be {
+    background-color: rgba(225, 10, 20, 0.2);
+  }
+  .task.test {
+    background-color: rgba(11, 117, 226, 0.3);
+  }
+  .task__no, .story__no {
+    font-size: 5mm;
+    color: blue;
+    margin-top: 0;
+    margin-bottom: 2mm;
+  }
+  .story__no {
+    font-size: 7mm;
+  }
+  .story__title {
+    font-size: 8mm;
+    font-weight: bold;
+  }
+  .task__title {
+    font-weight: bold;
+  }
+  .task__footer,.story__footer {
+    text-align: right;
+    font-weight: bold;
+    margin-top: auto;
+  }
+  .story__footer {
+    font-size: 7mm;
+  }
+  .footer__name {
+    color: red;
+  }
+  </style>
+</html>
