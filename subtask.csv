@@ -1,3 +1,0 @@
-storyKey,sub-taskSummary,userId,storyPoint,description,label.startDate,endDate
-DAT4-4528,【后端】慢SQL优化(1:对buried_point_menu表进行全表扫描.2:对chats_click_log 表进行全表扫描等SQL语句),魏涛,1.5,--,后端,2020/5/7,2020/5/8
-

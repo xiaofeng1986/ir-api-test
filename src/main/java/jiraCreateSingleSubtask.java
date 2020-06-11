@@ -5,7 +5,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.time.Instant;
 
-public class jiraCreateSubtask {
+public class jiraCreateSingleSubtask {
 
     public static void main(String[] args) throws IOException {
         String currentTime = Instant.now().toString();
