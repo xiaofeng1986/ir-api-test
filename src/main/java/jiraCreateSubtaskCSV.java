@@ -9,18 +9,19 @@ public class jiraCreateSubtaskCSV {
 //    storyKey,sub-taskSummary,userId,storyPoint,description,startDate,endDate
 //    SYJ-2636,【测试】小程序食谱草稿测试用例编写,葛肖峰,0.5,-,2020/6/11,2020/6/11
 
-    public static final String CSV_FILE_PATH = "D:\\001_Xiaofeng\\JiraRequest\\subtask.csv";
+    public static final String WIN_CSV_FILE_PATH = "D:\\001_Xiaofeng\\JiraRequest\\subtask.csv";
+    public static final String OSX_CSV_FILE_PATH = "/Users/19070005/Documents/gitRepo/c4i/ir-api-test/src/main/javasubtask.csv";
     public static final String JIRA_USER = "19070005";
     public static final String JIRA_PWD = "Utada.2019";
-    public static final String PROJECT = "SYJ";  //IR-图像中台,DAT4-C4I,,SYJ-食与家
-    public static final String FIX_VERSION = "Sprint202018()";
+    public static final String PROJECT = "IR";  //IR-图像中台,DAT4-C4I,,SYJ-食与家
+    public static final String FIX_VERSION = "Sprint14";
     public static String totalCardJSON = "[";
 
 
     //中文字符逗号处理，
 
     public static void main(String[] args) {
-        String csvFile = CSV_FILE_PATH;
+        String csvFile = OSX_CSV_FILE_PATH;
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
@@ -156,10 +157,7 @@ public class jiraCreateSubtaskCSV {
                 userId = "18010019";
                 label = "测试";
                 break;
-            case "吴雅韵":
-                userId = "17110096";
-                label = "产品";
-                break;
+
             case "苗壮":
                 userId = "17080013";
                 label = "前端";
@@ -275,6 +273,18 @@ public class jiraCreateSubtaskCSV {
             case "徐晓贇":
                 userId = "17080107";
                 label = "测试";
+                break;
+            case "吴雅韵":
+                userId = "17110096";
+                label = "产品";
+                break;
+            case "胡学文":
+                userId = "19040004";
+                label = "产品";
+                break;
+            case "陈霞":
+                userId = "17120056";
+                label = "产品";
                 break;
             default:
                 userId = "19070005";
