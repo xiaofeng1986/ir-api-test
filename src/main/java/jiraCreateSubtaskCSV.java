@@ -10,11 +10,11 @@ public class jiraCreateSubtaskCSV {
 //    SYJ-2636,【测试】小程序食谱草稿测试用例编写,葛肖峰,0.5,-,2020/6/11,2020/6/11
 
     public static final String WIN_CSV_FILE_PATH = "D:\\001_Xiaofeng\\JiraRequest\\subtask.csv";
-    public static final String OSX_CSV_FILE_PATH = "/Users/19070005/Documents/gitRepo/c4i/ir-api-test/src/main/javasubtask.csv";
+    public static final String OSX_CSV_FILE_PATH = "/Users/19070005/Documents/gitRepo/ir-api-test/src/main/java/subtask.csv";
     public static final String JIRA_USER = "19070005";
     public static final String JIRA_PWD = "Utada.2019";
-    public static final String PROJECT = "IR";  //IR-图像中台,DAT4-C4I,,SYJ-食与家
-    public static final String FIX_VERSION = "Sprint14";
+    public static final String PROJECT = "DAT4";  //IR-图像中台,DAT4-C4I,,SYJ-食与家
+    public static final String FIX_VERSION = "Sprint28";
     public static String totalCardJSON = "[";
 
 
