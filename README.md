@@ -1,8 +1,6 @@
 # IR-API-TEST
 
-用途
-1. csv批量建jira sub task。<br>
-2. cucubmber跑API case<br>
+csv批量建jira sub task。<br>
 
 前置条件：
 1.安装JDK1.8
@@ -12,12 +10,15 @@
 主要逻辑都在jiraCreateSubtaskCSV.java.
 
 1. 准备subtask.csv<br>
-storyKey,storySummary,sub-taskSummary,userId,storyPoint,description,label<br>
-IR-980,故事概要,子任务概要,人名或ID,3,子任务描述,测试<br>
+storyKey,parentStory,sub-taskSummary,userId,storyPoint,description,startDate,endDate<br>
+IR-980,故事概要,子任务概要,人名或ID,3,子任务描述,开始日期，结束日期<br>
+开始日期和结束日期是可选字段<br>
 人名需要在代码中添加ID转换<br>
 
 2. 放入合适的路径，目前路径，可以自行修改<br>
-String csvFile = "D:\\001_Xiaofeng\\JiraRequest\\subtask.csv";<br>
+Win路径 WIN_CSV_FILE_PATH = "D:\\001_Xiaofeng\\JiraRequest\\subtask.csv";<br>
+MacOSX路径 OSX_CSV_FILE_PATH = "/Users/19070005/Documents/gitRepo/ir-api-test/src/main/java/subtask.csv";<br>
+    
 
 3. 修改jiraCreateSubtaskCSV.java 初始值 后执行该java<br>
 Jira用户名，密码<br>
