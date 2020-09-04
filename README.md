@@ -1,13 +1,12 @@
 # IR-API-TEST
 
-csv批量建jira sub task。<br>
+使用csv批量建jira sub task。<br>
 
 前置条件：
-1.安装JDK1.8
-2.按照IDE（可以使用IDEA）,使用IDE运行jiraCreateSubtaskCSV.java
+1.安装JDK1.8<br>
+2.按照IDE（可以使用IDEA）,使用IDE运行jiraCreateSubtaskCSV.java<br>
 
-如何使用csv批量建jira sub task<br>
-主要逻辑都在jiraCreateSubtaskCSV.java.
+如何使用csv批量建jira sub task（主要逻辑都在jiraCreateSubtaskCSV.java）<br>
 
 1. 准备subtask.csv<br>
 storyKey,parentStory,sub-taskSummary,userId,storyPoint,description,startDate,endDate<br>
@@ -25,6 +24,7 @@ MacOSX路径 OSX_CSV_FILE_PATH = "/Users/19070005/Documents/gitRepo/ir-api-test/
 - Jira项目ID：String project = "IR"; //IR,DAT4 <br>
 - Jira Sprint fixVersion：String fixVersion = "Sprint08";<br>
 
+----
 PS: 如有需要，自行添加用户名和userID 转换<br>
 switch (userId) {<br>
             case "刘":<br>
