@@ -14,7 +14,7 @@ public class jiraCreateSubtaskCSV {
     public static final String JIRA_USER = "19070005";
     public static final String JIRA_PWD = "Utada.2019";
     public static final String PROJECT = "DAT4";  //IR-图像中台,DAT4-C4I,,SYJ-食与家
-    public static final String FIX_VERSION = "Sprint28";
+    public static final String FIX_VERSION = "Sprint30";
     public static String totalCardJSON = "[";
 
 
@@ -78,10 +78,11 @@ public class jiraCreateSubtaskCSV {
         String fixVersion = FIX_VERSION;
 //        String components = "开发";
         String parentKey = issue[0];
-        String subTaskSummary = issue[1];
-        String userId = issue[2];
-        String storyPoint = issue[3];
-        String descriptioin = subTaskSummary+issue[4];
+        String parentStory = issue[1];
+        String subTaskSummary = issue[2];
+        String userId = issue[3];
+        String storyPoint = issue[4];
+        String descriptioin = subTaskSummary+issue[5];
         String label = null;
         String startDate = null;
         String endDate = null;
@@ -90,11 +91,11 @@ public class jiraCreateSubtaskCSV {
         String endDateJson = null;
         String userIdJson = userId;
 
-        if (issue.length>5){
+        if (issue.length>6){
             includeDate = true;
 
-            startDate=issue[5];
-            endDate = issue[6];
+            startDate=issue[6];
+            endDate = issue[7];
             startDateJson = startDate.substring(5);
             endDateJson = endDate.substring(5);
 
