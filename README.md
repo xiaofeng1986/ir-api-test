@@ -21,14 +21,9 @@ MacOSX路径 OSX_CSV_FILE_PATH = "/Users/19070005/Documents/gitRepo/ir-api-test/
     
 
 3. 修改jiraCreateSubtaskCSV.java 初始值 后执行该java<br>
-Jira用户名，密码<br>
-String userpassword = "19070005" + ":" + "Utada.2019";  <br>
-
-Jira项目ID<br>
-String project = "IR"; //IR,DAT4 <br>
-
-Jira Sprint fixVersion<br>
-String fixVersion = "Sprint08";<br>
+- Jira用户名，密码： String userpassword = "19070005" + ":" + "Utada.2019";  <br>
+- Jira项目ID：String project = "IR"; //IR,DAT4 <br>
+- Jira Sprint fixVersion：String fixVersion = "Sprint08";<br>
 
 PS: 如有需要，自行添加用户名和userID 转换<br>
 switch (userId) {<br>
